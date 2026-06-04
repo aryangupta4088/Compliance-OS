@@ -1,5 +1,6 @@
 import json
 from langchain_groq import ChatGroq
+from app.config import settings           
 from app.services.ocr_service import OCRService
 from app.database import mongo_db
 from sqlalchemy.ext.asyncio import AsyncSession

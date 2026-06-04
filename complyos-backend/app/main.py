@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers import (
     auth, documents, compliance, ws_aria,
     business, ca, loans, freelancers, 
-    notifications, registration, admin
+    notifications, registration, admin,schemes
 )
 from app.database import init_db
 
@@ -32,6 +32,7 @@ app.include_router(notifications.router, prefix="/api")
 app.include_router(registration.router, prefix="/api")
 app.include_router(admin.router, prefix="/api")
 app.include_router(ws_aria.router)
+app.include_router(schemes.router, prefix="/api")
 
 @app.get("/health")
 async def health():
